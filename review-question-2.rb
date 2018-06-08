@@ -1,8 +1,22 @@
 # Finish the implementation of the Car class so it has the functionality described below
-
+require "pry"
 class Car
+  attr_accessor :make, :model
+  @@all = []
+
+  def self.all
+    @@all
+  end
 
 
+  def initialize(car_hash)
+    @make = car_hash[:make]
+    @model = car_hash[:model]
+    self.class.all << self
+  end
+  def drive
+    "VROOOOOOOOOOOOM!"
+  end
 
 end
 
